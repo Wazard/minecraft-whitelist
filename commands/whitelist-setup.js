@@ -3,7 +3,8 @@ import { AttachmentBuilder } from 'discord.js';
 import 'dotenv/config'; // so we can read TOKEN from .env
 
 export async function execute(interaction) {
-    if (interaction.user.id !== '365943186599706625') {
+    const userId = process.env.USER_ID
+    if (interaction.user.id !== userId) {
         return interaction.reply({ content: 'You are not allowed to run this command.', ephemeral: true });
       }
 
